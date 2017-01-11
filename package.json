@@ -1,0 +1,23 @@
+{
+  "name": "hex-algorithms",
+  "version": "1.0.0",
+  "description": "Game board Algorithm - Development",
+  "main": "app.js",
+  "scripts": {
+    "debug-test": "iron-node node_modules/mocha/bin/_mocha ./tests",
+    "test" : "node_modules/mocha/bin/_mocha ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdbennet2001/hex-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdbennet2001/hex-algorithms/issues"
+  },
+  "homepage": "https://github.com/jdbennet2001/hex-algorithms#readme",
+  "dependencies": {
+    "mocha": "^3.2.0"
+  }
+}
