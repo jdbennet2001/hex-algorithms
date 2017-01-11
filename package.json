@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "debug-test": "iron-node node_modules/mocha/bin/_mocha ./tests",
-    "test" : "node_modules/mocha/bin/_mocha ./tests"
+    "test": "node_modules/mocha/bin/_mocha ./tests"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/jdbennet2001/hex-algorithms#readme",
   "dependencies": {
+    "chai": "^3.5.0",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.4",
     "mocha": "^3.2.0"
   }
 }

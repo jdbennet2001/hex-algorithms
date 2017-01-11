@@ -1,15 +1,25 @@
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it.only('should return -1 unless present', function() {
-      // this test will be run
+var jsonfile  = require('jsonfile');
+var path      = require('path');
+var assert    = require('chai').assert;
+
+var dataTX    = require('../modules/dataTX');
+
+
+describe('Load Model', function() {
+
+    var model;
+    var state;
+
+    it('Should load model as valid JSON', function() {
+      var data_path = path.join(__dirname, '../data/state.json');
+      model  = jsonfile.readFileSync(data_path);
+      assert.isDefined(model, 'Initial model data not defined.');
     });
 
-    it.only('should return the index when present', function() {
-      // this test will also be run
+    it( 'Generate state from file', function(){
+      state = dataTX( model );
+      assert.isDefined(state, 'Model correctly transformed into state object');
+      assert.equal( Object.keys(state).length, model.board.width * model.board.height, 'All keys generated.');
     });
 
-    it('should return -1 if called with a non-Array context', function() {
-      // this test will not be run
-    });
-  });
 });
