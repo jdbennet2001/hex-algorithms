@@ -43,9 +43,19 @@ describe('Adjacent nodes', function() {
 
     });
 
-    it('Adjacent nodes for even row cell', function() {
+    it('Adjacent nodes for first cell', function() {
         let adjacent_list = utils.adjacent(1,1);
         assert.equal( adjacent_list.length, 3 , 'Upper right cell has three neighbors');
+    });
+
+    it('Adjacent nodes for even row cell', function() {
+        let adjacent_list = utils.adjacent(2,2);
+        assert.equal( adjacent_list.length, 6 , 'Expect six neighbors.');
+    });
+
+    it('Adjacent nodes for odd row cell', function() {
+        let adjacent_list = utils.adjacent(3,3);
+        assert.equal( adjacent_list.length, 6 , 'Expect six neighbors.');
     });
 
 });
