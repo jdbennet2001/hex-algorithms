@@ -1,4 +1,4 @@
-/* jshint esnext: true */
+"use strict";
 
 var path      = require('path');
 var assert    = require('chai').assert;
@@ -10,7 +10,6 @@ var hexUtils  = require('../modules/hexUtils');
 describe('Load Model', function() {
 
     var model;
-    var state;
 
     it('Should load model as valid JSON', function() {
       var data_path = path.join(__dirname, '../data/state.json');
@@ -19,9 +18,9 @@ describe('Load Model', function() {
     });
 
     it( 'Generate state from file', function(){
-      state = dataTX( model );
+      const state = dataTX( model );
       assert.isDefined(state, 'Model correctly transformed into state object');
-      assert.equal( Object.keys(state).length, model.board.width * model.board.height, 'All keys generated.');
+      assert.equal( Object.keys(state.board).length, model.board.width * model.board.height, 'All keys generated.');
     });
 
 });
@@ -40,12 +39,13 @@ describe('Adjacent nodes', function() {
       const state = dataTX( model );
 
       //analysis support for the state model
-      utils = new hexUtils(this.state);
+      utils = new hexUtils(state);
 
     });
 
     it('Adjacent nodes for even row cell', function() {
-
+        let adjacent_list = utils.adjacent(1,1);
+        assert.equal( adjacent_list.length, 3 , 'Upper right cell has three neighbors');
     });
 
 });

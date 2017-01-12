@@ -6,7 +6,7 @@ var _ = require('lodash');
 
 function dataTX( model ){
 
-  var state = {};
+  var state = { board: {}, model: model };
 
   function key( x, y ){
       x = _.padStart(x.toString(), 2, '0');
@@ -16,9 +16,12 @@ function dataTX( model ){
 
   for ( var x = 1; x <= model.board.width; x++ ){
     for( var y = 1; y <= model.board.height; y++ ){
-      state[ key(x,y) ] = {};
+      state.board[ key(x,y) ] = {};
     }
   }
+
+  state.model = model;
+
   return state;
 }
 

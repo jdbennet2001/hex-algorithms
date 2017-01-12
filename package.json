@@ -4,7 +4,7 @@
   "description": "Game board Algorithm - Development",
   "main": "app.js",
   "scripts": {
-    "debug-test": "iron-node node_modules/mocha/bin/_mocha ./tests",
+    "debug-test": "iron-node node_modules/mocha/bin/_mocha ./tests  --harmony",
     "test": "node_modules/mocha/bin/_mocha ./tests"
   },
   "repository": {
